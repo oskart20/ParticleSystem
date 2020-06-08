@@ -9,7 +9,7 @@ function setup() {
   //let p = new Proton(400, 275, 0, 0);
   //let e = new Electron(400, 300, 0, 0);
   //let n = new Neutron(400, 250, 0, 0);
-  //particles = [p, e];
+  //particles = [p, e, n];
   for (var i = 0; i < 60; i += 3) {
     particles[i] = new Proton(random(15, width-15), random(15, width-15), random(-2, 2), random(-2, 2));
     particles[i+1] = new Electron(random(15, width-15), random(15, width-15), random(-2, 2), random(-2, 2));
