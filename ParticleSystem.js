@@ -1,5 +1,5 @@
-var eps = 100;
-var gam = 100;
+const eps = 100;
+const gam = 100;
 let particles = [];
 
 function setup() {
@@ -10,7 +10,7 @@ function setup() {
   //let e = new Electron(400, 300, 0, 0);
   //let n = new Neutron(400, 250, 0, 0);
   //particles = [p, e, n];
-  for (var i = 0; i < 60; i += 3) {
+  for (let i = 0; i < 60; i += 3) {
     particles[i] = new Proton(random(15, width-15), random(15, width-15), random(-2, 2), random(-2, 2));
     particles[i+1] = new Electron(random(15, width-15), random(15, width-15), random(-2, 2), random(-2, 2));
     particles[i+2] = new Neutron(random(15, width-15), random(15, width-15), random(-2, 2), random(-2, 2));
