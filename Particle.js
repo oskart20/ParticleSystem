@@ -22,26 +22,28 @@ class Particle {
   
   accelerate() {
     this.V.add(this.A);
-    this.V.limit(7);
+    this.V.limit(14);
   }
   
   detection() {
     if (this.P.x > width - this.r || this.P.x < this.r) {
       this.V.x *= -1;
+      this.P.set(constrain(this.P.x, this.r, width - this.r), constrain(this.P.y, this.r, height - this.r));
     }
     if (this.P.y > height - this.r || this.P.y < this.r) {
       this.V.y *= -1;
+      this.P.set(constrain(this.P.x, this.r, width - this.r), constrain(this.P.y, this.r, height - this.r));
     }
   }
   
   setAcceleration(F){
-    this.A.set(F);
+    this.A.set(F.div(this.m));
   }
 }
 
 class Electron extends Particle {
   constructor(x, y, vx, vy) {
-    super(x, y, 2, 0.01, 'blue', vx, vy);
+    super(x, y, 2, 0.0001, 'blue', vx, vy);
     this.q = -1;
   }
 }
